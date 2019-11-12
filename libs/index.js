@@ -2,7 +2,7 @@ var fs = require("fs");
 var path = require("path"); //解析需要遍历的文件夹
 
 function fileDisplay(dir) {
-  dir = dir || "./pages";
+  dir = dir || "./src/views";
   var filePath = path.resolve(dir);
   //根据文件路径读取文件，返回文件列表
   fs.readdir(filePath, function(err, files) {
@@ -38,8 +38,8 @@ function getFile(flieName, ord, filename) {
     if (err) {
       console.warn(err);
     } else {
-      //html部分转换
-      if (flieName.indexOf("wxml") != -1) {
+      //匹配到vue文件
+      if (flieName.indexOf("vue") != -1) {
         var dataName = data;
         replaceHtml(dataName, ord, flieName, filename);
       }
@@ -144,7 +144,7 @@ function replaceHtml(fileContent, fileUrl, s, fileName) {
   str += "</template>";
 
   //新建文件
-  fs.writeFileSync(fileUrl + "/" + fileName.split(".")[0] + ".vue", str);
+  fs.writeFileSync(fileUrl + "/" + fileName.split(".")[0] + ".wxml", str);
 }
 
 module.exports = fileDisplay;
