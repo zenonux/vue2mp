@@ -1,5 +1,5 @@
 {
-  "name": "vue2mp",
+  "name": "vue-mp",
   "version": "0.1.0",
   "description": "vue转微信小程序工具",
   "main": "index.js",
