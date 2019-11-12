@@ -16,6 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zenonux/vue2mp.git"
+    "url": "git+https://github.com/zenonux/vue2mp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zenonux/vue2mp/issues"
+  },
+  "homepage": "https://github.com/zenonux/vue2mp#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
