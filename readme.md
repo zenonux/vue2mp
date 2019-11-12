@@ -1,12 +1,12 @@
 ## 安装
 
-`npm i -g vue2mp`
+`npm i -g vue2wxml`
 
 ## 使用
 
 ```
 cd mp-dir               #进入小程序项目目录
-vue2mp                  #默认参数'./pages'
+vue2wxml                  #默认参数'./pages'
 mp2vue -p ./src/views       #自定义解析目录
 ```
 
