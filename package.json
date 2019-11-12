@@ -1,12 +1,13 @@
 {
   "name": "vue2wxml",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "vue转微信小程序工具",
   "main": "index.js",
   "bin": {
     "mp2vue": "./index.js"
   },
   "keywords": [
+    "vue2wxml",
     "vue2mp"
   ],
   "author": "换个头像心好累",
