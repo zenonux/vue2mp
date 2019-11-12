@@ -40,16 +40,10 @@ function getFile(flieName, ord, filename) {
     } else {
       //匹配到vue文件
       if (flieName.indexOf("vue") != -1) {
-        var dataName = data;
-        replaceHtml(dataName, ord, flieName, filename);
-      }
-      //css部分抓获
-      if (flieName.indexOf("wxss") != -1) {
-        replaceCss(data, ord, flieName, filename);
-      }
-      //less部分抓获
-      if (flieName.indexOf("less") != -1) {
-        replaceLess(data, ord, flieName, filename);
+        let htmlReg = /<template[^>]*>[\s\S]*?<\/[^>]*template>/gi;
+        let lessReg = /<style[^>]*>[\s\S]*?<\/[^>]*style>/gi;
+        replaceHtml(data.match(htmlReg)[0], ord, flieName, filename);
+        replaceLess(data.match(lessReg)[0], ord, flieName, filename);
       }
     }
   });
@@ -63,17 +57,6 @@ function replaceLess(fileContent, fileUrl, s, fileName) {
   });
   var s = '<style lang="less" scoped>' + str + "</style>";
   fs.writeFileSync(fileUrl + "/" + fileName.split(".")[0] + ".styl", s);
-}
-
-function replaceCss(fileContent, fileUrl, s, fileName) {
-  var str = fileContent;
-  str = str.replace(/image/g, "img");
-  str = str.replace(/navigator/g, "a");
-  str = str.replace(/\d+rpx/g, function(a) {
-    return Math.ceil(parseInt(a) / 2) + "px";
-  });
-  var s = "<style scoped>" + str + "</style>";
-  fs.writeFileSync(fileUrl + "/" + fileName.split(".")[0] + ".css", s);
 }
 
 function replaceHtml(fileContent, fileUrl, s, fileName) {
