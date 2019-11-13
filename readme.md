@@ -5,8 +5,8 @@
 ## 使用
 
 ```
-cd mp-dir               #进入小程序项目目录
-vue2wxml                  #默认参数'./pages'
+cd mp-dir                     #进入小程序项目目录
+vue2wxml                      #默认参数'./src/views'
 vue2wxml -p ./src/views       #自定义解析目录
 ```
 
