@@ -57,7 +57,8 @@ function getFile(flieName, ord, filename) {
 function replaceLess(fileContent, fileUrl, s, fileName) {
   var str = fileContent;
   str = str.replace(/\d+px/g, function(a) {
-    return a == 1 ? "1rpx" : a * 2 + "rpx";
+    let num = parseInt(a);
+    return num == 1 ? "1rpx" : num * 2 + "rpx";
   });
   fs.writeFileSync(fileUrl + "/" + fileName.split(".")[0] + ".less", str);
 }
