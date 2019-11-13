@@ -17,4 +17,4 @@ vue2wxml -p ./src/views       #自定义解析目录
 
 ## less 转换
 
-    单位转换  1px = 1rpx, 2px = 2rpx
+    单位转换  1px = 1rpx, 2px = 4rpx
