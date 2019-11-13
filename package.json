@@ -4,7 +4,7 @@
   "description": "vue转微信小程序工具",
   "main": "index.js",
   "bin": {
-    "mp2vue": "./index.js"
+    "vue2wxml": "./index.js"
   },
   "keywords": [
     "vue2wxml",
